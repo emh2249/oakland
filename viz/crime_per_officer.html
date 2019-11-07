@@ -1,0 +1,230 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="../d3plus.v2.js"></script>
+
+
+
+<body>
+</body>
+<script>
+var myData =
+[
+  {
+    "city": "Oakland,",
+    "crime_per_officer": 7.5
+  },
+  {
+    "city": "Wichita,",
+    "crime_per_officer": 7.13
+  },
+  {
+    "city": "Memphis,",
+    "crime_per_officer": 6.35
+  },
+  {
+    "city": "Kansas City,",
+    "crime_per_officer": 6.04
+  },
+  {
+    "city": "Detroit,",
+    "crime_per_officer": 5.62
+  },
+  {
+    "city": "Nashville Metro,",
+    "crime_per_officer": 5.32
+  },
+  {
+    "city": "Tulsa,",
+    "crime_per_officer": 5.32
+  },
+  {
+    "city": "Oklahoma City,",
+    "crime_per_officer": 5.14
+  },
+  {
+    "city": "Sacramento,",
+    "crime_per_officer": 5.11
+  },
+  {
+    "city": "Tucson,",
+    "crime_per_officer": 4.9
+  },
+  {
+    "city": "Bakersfield,",
+    "crime_per_officer": 4.76
+  },
+  {
+    "city": "Houston,",
+    "crime_per_officer": 4.6
+  },
+  {
+    "city": "Milwaukee,",
+    "crime_per_officer": 4.55
+  },
+  {
+    "city": "Baltimore,",
+    "crime_per_officer": 4.46
+  },
+  {
+    "city": "Indianapolis,",
+    "crime_per_officer": 4.27
+  },
+  {
+    "city": "Phoenix,",
+    "crime_per_officer": 4.15
+  },
+  {
+    "city": "San Antonio,",
+    "crime_per_officer": 4.1
+  },
+  {
+    "city": "Minneapolis,",
+    "crime_per_officer": 4
+  },
+  {
+    "city": "San Jose,",
+    "crime_per_officer": 3.99
+  },
+  {
+    "city": "Long Beach,",
+    "crime_per_officer": 3.99
+  },
+  {
+    "city": "Cleveland,",
+    "crime_per_officer": 3.81
+  },
+  {
+    "city": "New Orleans,",
+    "crime_per_officer": 3.81
+  },
+  {
+    "city": "Colorado Springs,",
+    "crime_per_officer": 3.73
+  },
+  {
+    "city": "Portland,",
+    "crime_per_officer": 3.71
+  },
+  {
+    "city": "Fresno,",
+    "crime_per_officer": 3.64
+  },
+  {
+    "city": "Seattle,",
+    "crime_per_officer": 3.56
+  },
+  {
+    "city": "Denver,",
+    "crime_per_officer": 3.47
+  },
+  {
+    "city": "Dallas,",
+    "crime_per_officer": 3.47
+  },
+  {
+    "city": "Las Vegas,",
+    "crime_per_officer": 3.36
+  },
+  {
+    "city": "Jacksonville,",
+    "crime_per_officer": 3.12
+  },
+  {
+    "city": "San Diego,",
+    "crime_per_officer": 3.1
+  },
+  {
+    "city": "Los Angeles,",
+    "crime_per_officer": 3.02
+  },
+  {
+    "city": "Omaha,",
+    "crime_per_officer": 2.99
+  },
+  {
+    "city": "San Francisco,",
+    "crime_per_officer": 2.66
+  },
+  {
+    "city": "Arlington,",
+    "crime_per_officer": 2.65
+  },
+  {
+    "city": "Fort Worth,",
+    "crime_per_officer": 2.65
+  },
+  {
+    "city": "Atlanta,",
+    "crime_per_officer": 2.48
+  },
+  {
+    "city": "Columbus,",
+    "crime_per_officer": 2.36
+  },
+  {
+    "city": "Mesa,",
+    "crime_per_officer": 2.36
+  },
+  {
+    "city": "El Paso,",
+    "crime_per_officer": 2.32
+  },
+  {
+    "city": "Miami,",
+    "crime_per_officer": 2.28
+  },
+  {
+    "city": "Philadelphia,",
+    "crime_per_officer": 2.19
+  },
+  {
+    "city": "Chicago,",
+    "crime_per_officer": 2.08
+  },
+  {
+    "city": "Boston,",
+    "crime_per_officer": 2.04
+  },
+  {
+    "city": "Austin,",
+    "crime_per_officer": 2.01
+  },
+  {
+    "city": "Washington",
+    "crime_per_officer": 1.72
+  },
+  {
+    "city": "Tampa,",
+    "crime_per_officer": 1.69
+  },
+  {
+    "city": "New York,",
+    "crime_per_officer": 1.28
+  },
+  {
+    "city": "Honolulu,",
+    "crime_per_officer": 1.26
+  },
+  {
+    "city": "Virginia Beach,",
+    "crime_per_officer": 0.68
+  }
+];
+
+
+new d3plus.BarChart()
+  .config({
+    data: myData,
+    groupBy: "city",
+    x: "city",
+    y: "crime_per_officer",
+    xSort: function(a, b) {
+      return a["city"] - b["city"];
+    },
+    legend: false
+  })
+  .title("Violent Crimes per Officer in 2018")
+  .render();
+
+  </script>

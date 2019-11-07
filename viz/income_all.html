@@ -1,0 +1,533 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="../d3plus.v2.js"></script>
+
+
+
+<body>
+</body>
+
+<script>
+
+var myData = [
+  {
+    "Name": "Piedmont,",
+    "Household_Income": 76832
+  },
+  {
+    "Name": "Piedmont,",
+    "Household_Income": 73382
+  },
+  {
+    "Name": "Upper",
+    "Household_Income": 70328
+  },
+  {
+    "Name": "Orinda,",
+    "Household_Income": 70006
+  },
+  {
+    "Name": "Moraga,",
+    "Household_Income": 69811
+  },
+  {
+    "Name": "Upper",
+    "Household_Income": 67969
+  },
+  {
+    "Name": "Montclair,",
+    "Household_Income": 66738
+  },
+  {
+    "Name": "Castro",
+    "Household_Income": 63911
+  },
+  {
+    "Name": "West",
+    "Household_Income": 60500
+  },
+  {
+    "Name": "Trestle",
+    "Household_Income": 60209
+  },
+  {
+    "Name": "Piedmont",
+    "Household_Income": 60171
+  },
+  {
+    "Name": "Rockridge,",
+    "Household_Income": 58874
+  },
+  {
+    "Name": "Woodminster,",
+    "Household_Income": 58197
+  },
+  {
+    "Name": "Claremont",
+    "Household_Income": 57660
+  },
+  {
+    "Name": "Montclair,",
+    "Household_Income": 57345
+  },
+  {
+    "Name": "Merriewood,",
+    "Household_Income": 56913
+  },
+  {
+    "Name": "Oakmore,",
+    "Household_Income": 56139
+  },
+  {
+    "Name": "Alameda,",
+    "Household_Income": 55706
+  },
+  {
+    "Name": "Piedmont",
+    "Household_Income": 55241
+  },
+  {
+    "Name": "Alameda,",
+    "Household_Income": 54898
+  },
+  {
+    "Name": "Caballo",
+    "Household_Income": 53803
+  },
+  {
+    "Name": "Glenview,",
+    "Household_Income": 52293
+  },
+  {
+    "Name": "Dimond,",
+    "Household_Income": 51802
+  },
+  {
+    "Name": "Alameda,",
+    "Household_Income": 51466
+  },
+  {
+    "Name": "Shafter,",
+    "Household_Income": 51391
+  },
+  {
+    "Name": "Alameda,",
+    "Household_Income": 50893
+  },
+  {
+    "Name": "Chinatown,",
+    "Household_Income": 50465
+  },
+  {
+    "Name": "Downtown",
+    "Household_Income": 49172
+  },
+  {
+    "Name": "West",
+    "Household_Income": 48833
+  },
+  {
+    "Name": "Trestle",
+    "Household_Income": 48471
+  },
+  {
+    "Name": "Alameda,",
+    "Household_Income": 48209
+  },
+  {
+    "Name": "Dimond,",
+    "Household_Income": 47657
+  },
+  {
+    "Name": "Piedmont",
+    "Household_Income": 46608
+  },
+  {
+    "Name": "Lakeshore,",
+    "Household_Income": 46419
+  },
+  {
+    "Name": "West",
+    "Household_Income": 46248
+  },
+  {
+    "Name": "Redwood",
+    "Household_Income": 46058
+  },
+  {
+    "Name": "Cleveland",
+    "Household_Income": 45733
+  },
+  {
+    "Name": "Dimond,",
+    "Household_Income": 45614
+  },
+  {
+    "Name": "West",
+    "Household_Income": 44434
+  },
+  {
+    "Name": "West",
+    "Household_Income": 44305
+  },
+  {
+    "Name": "Alameda,",
+    "Household_Income": 44111
+  },
+  {
+    "Name": "Rancho",
+    "Household_Income": 43894
+  },
+  {
+    "Name": "Redwood",
+    "Household_Income": 43408
+  },
+  {
+    "Name": "Emeryville,",
+    "Household_Income": 43317
+  },
+  {
+    "Name": "Upper",
+    "Household_Income": 43116
+  },
+  {
+    "Name": "Alameda,",
+    "Household_Income": 43088
+  },
+  {
+    "Name": "East",
+    "Household_Income": 42820
+  },
+  {
+    "Name": "Grand",
+    "Household_Income": 42624
+  },
+  {
+    "Name": "East",
+    "Household_Income": 42070
+  },
+  {
+    "Name": "Clinton,",
+    "Household_Income": 41884
+  },
+  {
+    "Name": "Adams",
+    "Household_Income": 41522
+  },
+  {
+    "Name": "Cleveland",
+    "Household_Income": 41129
+  },
+  {
+    "Name": "Downtown",
+    "Household_Income": 41101
+  },
+  {
+    "Name": "Downtown",
+    "Household_Income": 40813
+  },
+  {
+    "Name": "Grand",
+    "Household_Income": 40801
+  },
+  {
+    "Name": "Alameda,",
+    "Household_Income": 40425
+  },
+  {
+    "Name": "Emeryville,",
+    "Household_Income": 40338
+  },
+  {
+    "Name": "Temescal,",
+    "Household_Income": 39768
+  },
+  {
+    "Name": "Allendale,",
+    "Household_Income": 39439
+  },
+  {
+    "Name": "Fruitvale,",
+    "Household_Income": 39349
+  },
+  {
+    "Name": "Clinton,",
+    "Household_Income": 39221
+  },
+  {
+    "Name": "Jefferson,",
+    "Household_Income": 38965
+  },
+  {
+    "Name": "Emeryville,",
+    "Household_Income": 38942
+  },
+  {
+    "Name": "West",
+    "Household_Income": 38933
+  },
+  {
+    "Name": "Tuxedo,",
+    "Household_Income": 38537
+  },
+  {
+    "Name": "Clinton,",
+    "Household_Income": 38384
+  },
+  {
+    "Name": "Fruitvale,",
+    "Household_Income": 38110
+  },
+  {
+    "Name": "School,",
+    "Household_Income": 38022
+  },
+  {
+    "Name": "Highland",
+    "Household_Income": 38010
+  },
+  {
+    "Name": "Bella",
+    "Household_Income": 37991
+  },
+  {
+    "Name": "Rancho",
+    "Household_Income": 37178
+  },
+  {
+    "Name": "Oakland,",
+    "Household_Income": 37077
+  },
+  {
+    "Name": "Upper",
+    "Household_Income": 36881
+  },
+  {
+    "Name": "Harrington,",
+    "Household_Income": 36411
+  },
+  {
+    "Name": "Downtown",
+    "Household_Income": 36165
+  },
+  {
+    "Name": "Downtown",
+    "Household_Income": 36058
+  },
+  {
+    "Name": "Meadow",
+    "Household_Income": 35919
+  },
+  {
+    "Name": "Fruitvale,",
+    "Household_Income": 35436
+  },
+  {
+    "Name": "Reservoir",
+    "Household_Income": 35298
+  },
+  {
+    "Name": "Meadow",
+    "Household_Income": 34702
+  },
+  {
+    "Name": "South",
+    "Household_Income": 33970
+  },
+  {
+    "Name": "Melrose,",
+    "Household_Income": 33675
+  },
+  {
+    "Name": "Southwest",
+    "Household_Income": 33460
+  },
+  {
+    "Name": "Eastmont",
+    "Household_Income": 33366
+  },
+  {
+    "Name": "Fairfax,",
+    "Household_Income": 33303
+  },
+  {
+    "Name": "Adams",
+    "Household_Income": 32561
+  },
+  {
+    "Name": "Maxwell",
+    "Household_Income": 32497
+  },
+  {
+    "Name": "Bushrod,",
+    "Household_Income": 32440
+  },
+  {
+    "Name": "Paradise",
+    "Household_Income": 30789
+  },
+  {
+    "Name": "Highland,",
+    "Household_Income": 30745
+  },
+  {
+    "Name": "Emeryville,",
+    "Household_Income": 30707
+  },
+  {
+    "Name": "Gaskill,",
+    "Household_Income": 30370
+  },
+  {
+    "Name": "Pill",
+    "Household_Income": 30134
+  },
+  {
+    "Name": "Adams",
+    "Household_Income": 30082
+  },
+  {
+    "Name": "Millsmont,",
+    "Household_Income": 29817
+  },
+  {
+    "Name": "Prescott,",
+    "Household_Income": 29789
+  },
+  {
+    "Name": "Temescal,",
+    "Household_Income": 29593
+  },
+  {
+    "Name": "Castlemont,",
+    "Household_Income": 29280
+  },
+  {
+    "Name": "Webster,",
+    "Household_Income": 29258
+  },
+  {
+    "Name": "Bushrod,",
+    "Household_Income": 29077
+  },
+  {
+    "Name": "Seminary,",
+    "Household_Income": 28656
+  },
+  {
+    "Name": "South",
+    "Household_Income": 28597
+  },
+  {
+    "Name": "Arroyo",
+    "Household_Income": 28573
+  },
+  {
+    "Name": "Southwest",
+    "Household_Income": 28407
+  },
+  {
+    "Name": "Fremont,",
+    "Household_Income": 28368
+  },
+  {
+    "Name": "Maxwell",
+    "Household_Income": 28221
+  },
+  {
+    "Name": "Oakland",
+    "Household_Income": 28217
+  },
+  {
+    "Name": "Oak",
+    "Household_Income": 28105
+  },
+  {
+    "Name": "Coliseum,",
+    "Household_Income": 28015
+  },
+  {
+    "Name": "Havenscourt,",
+    "Household_Income": 27978
+  },
+  {
+    "Name": "Oakland",
+    "Household_Income": 27950
+  },
+  {
+    "Name": "Brookfield",
+    "Household_Income": 27606
+  },
+  {
+    "Name": "Hegenberger,",
+    "Household_Income": 27602
+  },
+  {
+    "Name": "Santa",
+    "Household_Income": 27540
+  },
+  {
+    "Name": "West",
+    "Household_Income": 27343
+  },
+  {
+    "Name": "Longfellow,",
+    "Household_Income": 26502
+  },
+  {
+    "Name": "Hoover",
+    "Household_Income": 26028
+  },
+  {
+    "Name": "Fitchburg,",
+    "Household_Income": 25981
+  },
+  {
+    "Name": "Downtown",
+    "Household_Income": 25911
+  },
+  {
+    "Name": "Acorn,",
+    "Household_Income": 25573
+  },
+  {
+    "Name": "Oak",
+    "Household_Income": 25010
+  },
+  {
+    "Name": "Eastmont,",
+    "Household_Income": 24863
+  },
+  {
+    "Name": "Clawson,",
+    "Household_Income": 24498
+  },
+  {
+    "Name": "Acorn,",
+    "Household_Inc;ome": 23148
+  },
+  {
+    "Name": "Prescott,",
+    "Household_Income": 22832
+  },
+  {
+    "Name": "McClymonds,",
+    "Household_Income": "22711"
+  }
+];
+
+new d3plus.BarChart()
+  .config({
+    data: myData,
+    groupBy: "Name",
+    x: "Name",
+    y: "Household_Income",
+    xSort: function(a, b) {
+      return a["Name"] - b["Name"];
+    },
+    legend: false
+  })
+  .render();
+
+  </script>

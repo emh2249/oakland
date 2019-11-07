@@ -1,0 +1,42 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<script src="../d3plus.v2.js"></script>
+
+
+
+<body>
+</body>
+<script>
+
+var data = [
+  {id: "Oakland", x: 2016, y:  7},
+  {id: "Oakland", x: 2017, y: 7.42},
+  {id: "Oakland", x: 2018, y: 7.5},
+  {id: "Wichita",  x: 2016, y: 6},
+  {id: "Wichita",  x: 2017, y:  6.27},
+  {id: "Wichita",  x: 2018, y: 7.13 },
+  {id: "Memphis",  x: 2016, y: 6},
+  {id: "Memphis",  x: 2017, y:  6.63},
+  {id: "Memphis",  x: 2018, y: 6.35}
+];
+
+
+
+new d3plus.LinePlot()
+  .data(data)
+  .groupBy("id")
+  .shapeConfig({
+    Line: {
+      strokeLinecap: "round",
+      strokeWidth: 10
+    },
+    sort: function(a, b) {
+      if (a.id === "beta") return 1;
+      else return -1;
+    }
+  })
+  .render();
+
+
+</script>
