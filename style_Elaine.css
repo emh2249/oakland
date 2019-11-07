@@ -1,0 +1,93 @@
+
+p {
+  color: black;
+  text-align: left;
+  font-family: Helvetica, Garamond, Arial, serif;
+  font-size: 20px;
+}
+
+body {
+  background-color: white;
+}
+
+div.margin {
+  height: 30px;
+}
+
+div.title {
+  width:100%;
+  margin: auto;
+
+}
+
+img#title {
+  display: block;
+  width: 70%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+img#oakland {
+  display: block;
+  width: 100%;
+  margin: auto;
+  opacity: 100%;
+  filter: saturate(70%);
+
+}
+
+img#oakland:hover {
+  filter: saturate(100%);
+}
+
+div.main {
+  width:80%;
+  margin: auto;
+  border: 1px solid #73AD21;
+}
+
+div.title {
+    background-color: white;
+  }
+
+div.story {
+  width:100%;
+  margin: auto;
+  text-align: center;
+  font-family: Garamond, Helvetica, Arial, serif;
+}
+
+h2 {
+  font-family: Garamond, Helvetica, Arial, serif;
+  font-size: 50px;
+}
+
+h3 {
+  font-family: Garamond, Helvetica, Arial, serif;
+  font-size: 50px;
+  color: #800000;
+}
+
+
+table {
+  font-family: Helvetica, arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table:hover {
+  font-family: Helvetica, arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background: rgba(220,231,243, 0.5);
+  transition: .8s ease;
+}
+
+td, th {
+  text-align: left;
+  padding: 30px;
+  margin: auto;
+  background: rgba(245, 245, 245, 0.5);
+}
